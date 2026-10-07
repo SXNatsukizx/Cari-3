@@ -1,0 +1,485 @@
+/* =========================
+   AJUSTES GENERALES
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+
+        font-family: "Lora", serif;
+        color: #405879;
+
+        background-color: #dcecff;
+        background-image: url("Fotos/fondo-cinnamoroll.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+
+/* =========================
+   PANTALLAS
+   ========================= */
+
+/* Ocultas por defecto */
+.pantalla {
+    display: none;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    padding: 40px 24px;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+/* Solo se muestra la pantalla activa */
+.pantalla.activa {
+    display: flex;
+}
+
+/* Capa clara para leer mejor los textos largos */
+.pantalla:not(#inicio) {
+    background-color: rgba(248, 251, 255, 0.75);
+}
+
+.pantalla h1,
+.pantalla h2,
+.pantalla h3 {
+    max-width: 950px;
+    overflow-wrap: break-word;
+}
+
+.pantalla p {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 12px auto;
+
+    font-size: 18px;
+    line-height: 1.8;
+    overflow-wrap: break-word;
+}
+
+
+/* =========================
+   PANTALLA 1: BIENVENIDA
+   ========================= */
+
+#inicio h1 {
+    margin: 0 0 18px;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 500;
+    line-height: 1.2;
+
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.6);
+}
+
+#inicio p {
+    margin: 0 0 30px;
+    font-size: clamp(1.1rem, 2.5vw, 2rem);
+}
+
+#inicio button {
+    min-width: 190px;
+    font-size: 22px;
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+button {
+    flex-shrink: 0;
+
+    margin-top: 20px;
+    padding: 14px 34px;
+
+    font-family: inherit;
+    font-size: 18px;
+
+    color: #344e70;
+    background-color: #b9d8f5;
+
+    border: 2px solid white;
+    border-radius: 999px;
+
+    box-shadow: 0 6px 18px rgba(100, 132, 181, 0.25);
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #f4d5e6;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid #405879;
+    outline-offset: 4px;
+}
+
+
+/* =========================
+   PANTALLA 2: INTRODUCCIÓN
+   ========================= */
+
+#introduccion h1 {
+    margin: 0 0 18px;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+#introduccion p {
+    max-width: 800px;
+}
+
+
+/* =========================
+   PANTALLA 3: HISTORIA
+   ========================= */
+
+#historia {
+    justify-content: flex-start;
+    padding: 25px 20px 35px;
+}
+
+#historia h1,
+#historia h2,
+#historia h3 {
+    margin: 8px 0;
+}
+
+#historia p {
+    max-width: 1100px;
+    margin: 8px auto 20px;
+    line-height: 1.6;
+}
+
+/* Collage de tres fotos */
+.collage-libre {
+    position: relative;
+
+    width: 90%;
+    max-width: 720px;
+    height: 330px;
+
+    margin: 5px auto 10px;
+}
+
+/* Marcos */
+.marco {
+    position: absolute;
+
+    width: 246px;
+    padding: 8px;
+
+    background: #fffafd;
+
+    box-shadow: 0 8px 20px rgba(88, 116, 159, 0.22);
+}
+
+.marco img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    border-radius: inherit;
+}
+
+/* Foto 1 */
+.marco-1 {
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-2deg);
+
+    border-radius: 25px;
+    z-index: 3;
+}
+
+/* Foto 2 */
+.marco-2 {
+    top: 85px;
+    left: 12%;
+
+    transform: rotate(3deg);
+
+    border-radius: 35px 8px 35px 8px;
+    z-index: 1;
+}
+
+/* Foto 3 */
+.marco-3 {
+    top: 85px;
+    right: 12%;
+
+    transform: rotate(-3deg);
+
+    border-radius: 8px;
+    padding: 8px 8px 22px;
+
+    z-index: 1;
+}
+
+#historia button {
+    position: relative;
+    z-index: 5;
+
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   PANTALLA 4: CONVERSACIONES
+   ========================= */
+
+#primeras-conversaciones {
+    justify-content: flex-start;
+    padding: 25px 20px 40px;
+}
+
+#primeras-conversaciones h1 {
+    margin: 10px 0;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+#primeras-conversaciones h2 {
+    max-width: 900px;
+    margin: 5px auto 25px;
+
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* Collage de seis fotos */
+.collage-grande {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 90%;
+    max-width: 950px;
+
+    margin: 20px auto 30px;
+}
+
+.collage-grande .item {
+    position: relative;
+    min-width: 0;
+
+    padding: 10px 10px 24px;
+
+    background: #fffafd;
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 20px rgba(88, 116, 159, 0.18),
+        0 2px 5px rgba(88, 116, 159, 0.10);
+
+    transition: transform 0.25s ease;
+}
+
+.collage-grande .item img {
+    display: block;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Inclinaciones */
+.collage-grande .item-1 {
+    transform: rotate(-2deg);
+}
+
+.collage-grande .item-2 {
+    transform: rotate(1deg);
+}
+
+.collage-grande .item-3 {
+    transform: rotate(2deg);
+}
+
+.collage-grande .item-4 {
+    transform: rotate(2deg);
+}
+
+.collage-grande .item-5 {
+    transform: rotate(-1deg);
+}
+
+.collage-grande .item-6 {
+    transform: rotate(-2deg);
+}
+
+/* Efecto al pasar el mouse */
+@media (hover: hover) {
+    .collage-grande .item:hover {
+        transform: scale(1.05) rotate(0deg);
+        z-index: 10;
+    }
+}
+
+#primeras-conversaciones button {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   PANTALLA 5: MI CORAZÓN
+   ========================= */
+
+#mi-corazon h1 {
+    margin: 0 0 18px;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+#mi-corazon h2 {
+    max-width: 900px;
+
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.texto-corazon {
+    width: 100%;
+    max-width: 850px;
+
+    margin-top: 20px;
+    padding: 24px 30px;
+
+    background-color: rgba(255, 250, 253, 0.85);
+
+    border: 2px solid white;
+    border-radius: 25px;
+
+    box-shadow: 0 8px 24px rgba(88, 116, 159, 0.15);
+}
+
+.texto-corazon p {
+    margin: 0;
+}
+
+
+/* =========================
+   ADAPTACIÓN PARA CELULAR
+   ========================= */
+
+@media (max-width: 700px) {
+    /*
+     * Muestra la imagen completa en la parte inferior
+     * para que Cinnamoroll no quede recortado.
+     */
+    body {
+        background-size: 100% auto;
+        background-position: center bottom;
+    }
+
+    .pantalla {
+        padding: 30px 20px;
+    }
+
+    #inicio {
+        padding-bottom: 50vw;
+    }
+
+    #inicio h1 {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    #inicio button {
+        min-width: 160px;
+        font-size: 18px;
+    }
+
+    .pantalla p {
+        font-size: 16px;
+    }
+
+    /* Las tres fotos se apilan para que no se salgan */
+    .collage-libre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 24px;
+
+        width: 100%;
+        height: auto;
+
+        margin: 20px auto 30px;
+    }
+
+    .marco {
+        position: relative;
+
+        top: auto;
+        left: auto;
+        right: auto;
+
+        width: min(85%, 280px);
+    }
+
+    .marco-1 {
+        transform: rotate(-2deg);
+    }
+
+    .marco-2 {
+        transform: rotate(3deg);
+    }
+
+    .marco-3 {
+        transform: rotate(-3deg);
+    }
+
+    .collage-grande {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .collage-grande .item img {
+        height: 180px;
+    }
+
+    .texto-corazon {
+        padding: 20px 18px;
+    }
+}
+
+
+/* Reduce el movimiento si el dispositivo lo solicita */
+@media (prefers-reduced-motion: reduce) {
+    button,
+    .collage-grande .item {
+        transition: none;
+    }
+}
